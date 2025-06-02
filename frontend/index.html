@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DULMS Notifications Bot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="my-4 text-center">
+            <h1>DULMS Notifications Bot</h1>
+            <p class="lead">Check and receive notifications for your DULMS assignments and quizzes</p>
+        </header>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="mb-0">Login Details</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="scraperForm">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="captchaApiKey" class="form-label">Captcha API Key</label>
+                                <input type="password" class="form-control" id="captchaApiKey" name="captchaApiKey" required>
+                                <div class="form-text">Your anti-captcha.com API key</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="discordWebhook" class="form-label">Discord Webhook (Optional)</label>
+                                <input type="text" class="form-control" id="discordWebhook" name="discordWebhook">
+                                <div class="form-text">If provided, notifications will be sent to this Discord webhook</div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary" id="submitBtn">Check for Deadlines</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Results Area -->
+                <div class="card mt-4 d-none" id="resultsCard">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h2 class="mb-0">Results</h2>
+                        <div>
+                            <span class="badge bg-info" id="statusBadge">Running</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <h3>Log Output</h3>
+                            <div class="log-container p-3 bg-dark text-light" id="logOutput">
+                                <div class="log-content"></div>
+                            </div>
+                        </div>
+                        
+                        <div id="summaryContainer" class="d-none">
+                            <h3>Summary</h3>
+                            
+                            <div class="assignments-container mt-3">
+                                <h4>Assignments</h4>
+                                <div id="assignmentsTable"></div>
+                            </div>
+                            
+                            <div class="quizzes-container mt-3">
+                                <h4>Quizzes</h4>
+                                <div id="quizzesTable"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-5 text-center text-muted">
+            <p>&copy; 2025 DULMS Notifications Bot</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>

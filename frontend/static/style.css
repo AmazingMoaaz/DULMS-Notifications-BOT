@@ -1,0 +1,90 @@
+/* Main styling for DULMS Notifications Bot */
+
+body {
+    background-color: #f8f9fa;
+}
+
+.log-container {
+    height: 300px;
+    overflow-y: auto;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
+.log-content {
+    padding-bottom: 10px;
+}
+
+.log-entry {
+    margin-bottom: 3px;
+}
+
+.log-entry.info {
+    color: #17a2b8;
+}
+
+.log-entry.error {
+    color: #dc3545;
+}
+
+.log-entry.warning {
+    color: #ffc107;
+}
+
+.log-entry.success {
+    color: #28a745;
+}
+
+table.data-table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+}
+
+table.data-table th,
+table.data-table td {
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+}
+
+table.data-table th {
+    background-color: #f5f5f5;
+}
+
+.deadline-urgent {
+    background-color: #ffeeee;
+    color: #dc3545;
+}
+
+.deadline-warning {
+    background-color: #fff8e6;
+    color: #ffc107;
+}
+
+.deadline-ok {
+    background-color: #eeffee;
+    color: #28a745;
+}
+
+.status-completed {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.status-pending {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    table.data-table {
+        font-size: 0.85rem;
+    }
+    
+    .log-container {
+        height: 200px;
+    }
+}
